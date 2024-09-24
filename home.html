@@ -20,18 +20,28 @@
                 <li><a href="my-list.html">My List</a></li>
             </ul>
         </nav>
-        <a href="sign-in.html" class="sign-in">Sign In</a>
+        <a href="sign-in.html" class="sign-in" id="authButton">Sign In</a>
     </header>
 
     <!-- Popular Section -->
-    <section class="popular">
+    <section class="popular" id="popular">
         <h2>Popular on Netflix</h2>
-        <div class="popular-grid">
-            <img src="movie1.jpg" alt="Popular Movie 1">
-            <img src="movie2.jpg" alt="Popular Movie 2">
-            <img src="movie3.jpg" alt="Popular Movie 3">
-            <img src="movie4.jpg" alt="Popular Movie 4">
-            <img src="movie5.jpg" alt="Popular Movie 5">
+        <div class="popular-grid" id="movieGrid">
+            <div class="movie" data-title="Popular Movie 1">
+                <img src="movie1.jpg" alt="Popular Movie 1">
+            </div>
+            <div class="movie" data-title="Popular Movie 2">
+                <img src="movie2.jpg" alt="Popular Movie 2">
+            </div>
+            <div class="movie" data-title="Popular Movie 3">
+                <img src="movie3.jpg" alt="Popular Movie 3">
+            </div>
+            <div class="movie" data-title="Popular Movie 4">
+                <img src="movie4.jpg" alt="Popular Movie 4">
+            </div>
+            <div class="movie" data-title="Popular Movie 5">
+                <img src="movie5.jpg" alt="Popular Movie 5">
+            </div>
         </div>
     </section>
 
@@ -39,6 +49,9 @@
     <footer>
         <p>&copy; 2024 Netflix Clone</p>
     </footer>
+
+    <!-- Linking External JavaScript -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>

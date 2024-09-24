@@ -1,14 +1,19 @@
-/* General styles */
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #141414;
-    color: white;
-    margin: 0;
-    padding: 0;
+    color: #e5e5e5;
+    line-height: 1.6;
 }
 
 a {
-    color: white;
+    color: #e5e5e5;
     text-decoration: none;
 }
 
@@ -16,47 +21,90 @@ a:hover {
     color: #b3b3b3;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-img {
-    max-width: 100%;
-}
-
-/* Header */
+/* Header Section */
 header {
-    background-color: #141414;
-    padding: 10px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 50px;
+    background-color: #141414;
 }
 
-header #logo {
+#logo {
     width: 100px;
 }
 
-header nav ul {
+nav ul {
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
-header nav ul li {
-    display: inline-block;
+nav ul li {
+    list-style: none;
 }
 
-header .sign-in {
+nav ul li a {
+    font-weight: bold;
+}
+
+/* Sign In Button */
+header div a {
     font-size: 14px;
+    background-color: red;
+    padding: 5px 15px;
+    border-radius: 3px;
+}
+
+header div a:hover {
+    background-color: #e50914;
+}
+
+/* Section Styles */
+section {
+    padding: 50px;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Popular Grid */
+.popular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.popular-grid img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.popular-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Section */
+footer {
+    background-color: #141414;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #737373;
 }
 
 /* Hero Section */
-.hero {
-    background-image: url('banner.jpg');
+#hero {
+    background-image: url('banner.jpg'); /* Replace with actual banner image */
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,58 +112,324 @@ header .sign-in {
     color: white;
 }
 
-.hero h1 {
+#hero h1 {
     font-size: 3.5rem;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
-.hero p {
+#hero p {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
-.hero a {
+#hero a {
     background-color: red;
     padding: 15px 30px;
     font-size: 1rem;
     font-weight: bold;
     border-radius: 5px;
-    color: white;
 }
 
-.hero a:hover {
-    background-color: darkred;
+#hero a:hover {
+    background-color: #e50914;
 }
 
-/* Section Titles */
-section h2 {
-    font-size: 2rem;
-    margin: 20px 0;
-}
-
-/* Popular Section */
-.popular {
-    padding: 50px 50px;
-}
-
-.popular-grid {
+/* Movie Display Sections */
+#popular, #trending, #watch-again {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 15px;
 }
 
-.popular-grid img {
-    border-radius: 5px;
+/* Sign In Section */
+.sign-in {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
-/* Footer */
-footer {
-    background-color: #141414;
+.sign-in h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #333;
+    color: #e5e5e5;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #e50914;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e50914;
+}
+
+/* Movie Overlay and Hover Effects */
+.movie {
+    position: relative;
+}
+
+.movie-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
     text-align: center;
+}
+
+.movie.active {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+#popular img, #trending img, #watch-again img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#popular img:hover, #trending img:hover, #watch-again img:hover {
+    transform: scale(1.1);
+}
+
+/* Additional Footer Styling */
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer ul li {
+    margin: 5px 15px;
+}
+
+footer ul li a {
+    color: #737373;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Sign In Form */
+.sign-in button:hover {
+    background-color: #f40612;
+}
+
+.sign-in p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sign-in a {
+    color: #e50914;
+}
+
+/* TV Shows Grid Styling */
+.popular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.popular-grid img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Add to your styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+}
+
+header {
+    background-color: #e50914;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.sign-up {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #222222;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #f40612;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+/* Add to your styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+}
+
+header {
+    background-color: #e50914;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+#get-started {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #222;
+}
+
+#benefits {
+    padding: 20px;
+    background-color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-footer p {
-    color: #737373;
-    font-size: 0.9rem;
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #f40612;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
 }
